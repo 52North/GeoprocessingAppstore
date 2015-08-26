@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is automatically loaded for moving code package description edit mode. The editor description is defined in mcp.xml. -->
+<!-- @author Jochen Lenz -->
+
+<!-- MCP (main file for the Geoportal XML Editor) -->
+<g:editor xmlns:g="http://www.esri.com/geoportal/gxe" 
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:extends="gpt/gxe/editor.xml">
+	
+	<!-- context -->
+	<g:context g:extensible="true">
+	  <g:i18n g:key="validate.date">$i18n.catalog.fgdc.general.validate.date</g:i18n> 
+	</g:context>
+	
+	<!-- load editor description for moving code xmls -->
+	<g:rootElement g:overridable="true" g:extends="$base/mcp.xml"/>
+	 
+</g:editor>

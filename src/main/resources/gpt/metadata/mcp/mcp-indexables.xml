@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes index fields for moving code package descriptions. -->
+<!-- Index fields are used in several appstore views, e.g. adavanced search -->
+<!-- @author Jochen Lenz, Christin Henzen -->
+
+<indexables>
+
+	<!-- namespaces -->   
+	<namespace prefix="wps" uri="http://www.opengis.net/wps/1.0.0" />
+	<namespace prefix="xlink" uri="http://www.w3.org/1999/xlink" />
+	<namespace prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
+	<namespace prefix="ows" uri="http://www.opengis.net/ows/1.1" />
+	<namespace prefix="mcp" uri="http://gis.geo.tu-dresden.de/movingcode/1.1.0" />
+
+	<property meaning="keywords"
+		xpath="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Metadata/@xlink:title | /mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Title" />
+		
+	<property meaning="mcp:Title"
+		xpath="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Title" />
+
+	<property meaning="mcp:Abstract"
+		xpath="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Abstract" />
+ 
+	<property meaning="mcp:Identifier"
+		xpath="/mcp:packageDescription/@mcp:packageId" />
+
+	<property meaning="mcp:Modified"
+		xpath="/mcp:packageDescription/@mcp:timestamp" />
+		 
+	<property meaning="Modified"
+		xpath="/mcp:packageDescription/@mcp:timestamp" />
+	
+	<property meaning="mcp:cc_attributionName"
+		xpath="/mcp:packageDescription/mcp:exploitationRights/mcp:cc.attributionName" />
+	
+	<!-- used in advanced search, property meanings and search filter -->	
+	<property meaning="geooperator" xpath="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Metadata/@xlink:title"/>
+	<property meaning="containertype" xpath="/mcp:packageDescription/mcp:workspace/mcp:containerType"/>
+	<property meaning="platform" xpath="/mcp:packageDescription/mcp:platform/@mcp:platformId"/>
+	
+	<property meaning="AnyText" xpath="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Title"/>	
+</indexables>

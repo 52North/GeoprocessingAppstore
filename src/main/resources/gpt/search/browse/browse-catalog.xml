@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes geooperators used in browse section and appstore editor -->
+<!-- @author Johannes Brauner -->
+
+<tree>	
+	<label>name</label>
+	<identifier>id</identifier>
+
+	<item>
+		<id>0</id>
+		<name resourceKey="catalog.browse.geoop.root"></name>
+		<query>searchText=*:*</query>
+
+		<!-- Legacy GIS --> 
+		<item>
+			<id>legacygis</id>
+			<name>Legacy GIS</name>
+			<query>searchText=keywords:"Legacy GIS"</query>
+
+			<item>
+				<id>grass</id>
+				<name>GRASS</name>
+				<query>searchText=keywords:"GRASS"</query>
+
+				<item>
+					<id>functionalityclasses</id>
+					<name>Functionality classes</name>
+					<query>searchText=keywords:"Functionality classes"</query>
+
+					<item>
+						<id>vectorfunctionalityclass</id>
+						<name>Vector</name>
+						<query>searchText=keywords:"Vector (functionality class)"</query>
+					</item>
+
+					<item>
+						<id>rasterfunctionalityclass</id>
+						<name>Raster</name>
+						<query>searchText=keywords:"Raster (functionality class)"</query>
+					</item>
+				</item>
+
+				<item>
+					<id>keywords</id>
+					<name>Keywords</name>
+					<query>searchText=keywords:"Keywords"</query>
+
+					<item>
+						<id>algebrakeywords</id>
+						<name>Algebra</name>
+						<query>searchText=keywords:"Algebra (keywords)"</query>
+					</item>
+
+					<item>
+						<id>rasterkeywords</id>
+						<name>Raster</name>
+						<query>searchText=keywords:"Raster (keywords)"</query>
+					</item>
+				</item>
+
+				<item>
+					<id>menustructure</id>
+					<name>Menu structure</name>
+					<query>searchText=keywords:Menu structure"</query>
+
+					<item>
+						<id>rastermenustructure</id>
+						<name>Raster</name>
+						<query>searchText=keywords:Raster (menu structure)"</query>
+					</item>
+				</item>
+
+			</item>
+
+			<item>
+				<id>arcgis</id>
+				<name>ArcGIS</name>
+				<query>searchText=keywords:"ArcGIS"</query>
+
+				<item>
+					<id>toolboxes</id>
+					<name>Toolboxes</name>
+					<query>searchText=keywords:"Toolboxes"</query>
+
+					<item>
+						<id>toolsets</id>
+						<name>Toolsets</name>
+						<query>searchText=keywords:"Toolsets"</query>
+					</item>
+				</item>
+			</item>
+
+			<item>
+				<id>abstract</id>
+				<name>Abstract</name>
+				<query>searchText=keywords:"abstract"</query>
+			</item>
+
+		</item>
+
+		<!-- Geodata -->
+
+		<item>
+			<id>geodata</id>
+			<name>Geodata</name>
+			<query>searchText=keywords:"geodata"</query>
+
+			<item>
+				<id>raster</id>
+				<name>Raster</name>
+				<query>searchText=keywords:"Raster"</query>
+
+				<item>
+					<id>rastertoraster</id>
+					<name>Raster to raster</name>
+					<query>searchText=keywords:"Raster to raster"</query>
+				</item>
+			</item>
+
+			<item>
+				<id>vector</id>
+				<name>Vector</name>
+				<query>searchText=keywords:"Vector"</query>
+
+				<item>
+					<id>vectortovector</id>
+					<name>Vector to vector</name>
+					<query>searchText=keywords:"Vector to vector"</query>
+				</item>
+			</item>
+
+		</item>
+
+		<!-- Geoinformatics -->
+		<item>
+			<id>geoinformatics</id>
+			<name>Geoinformatics</name>
+			<query>searchText=keywords:"Geoinformatics"</query>
+
+			<item>
+				<id>mapalgebra</id>
+				<name>Map Algebra</name>
+				<query>searchText=keywords:"Map Algebra"</query>
+
+				<item>
+					<id>localfunctionoperations</id>
+					<name>LocalFUNCTION operations</name>
+					<query>searchText=keywords:"LocalFUNCTION operations"</query>
+				</item>
+				
+				<item>
+					<id>focalfunctionoperations</id>
+					<name>FocalFUNCTION operations</name>
+					<query>searchText=keywords:"FocalFUNCTION operations"</query>
+				</item>
+			</item>
+
+			<item>
+				<id>egenhoferoperators</id>
+				<name>Egenhofer operators</name>
+				<query>searchText=keywords:"Egenhofer operators"</query>
+			</item>
+
+			<item>
+				<id>overlay</id>
+				<name>Overlay</name>
+				<query>searchText=keywords:"Overlay"</query>
+			</item>
+		</item>
+
+	</item> 
+</tree>

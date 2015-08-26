@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files structures editor UI for moving code package descriptions. -->
+<!-- @author Jochen Lenz -->
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html" 
+	g:targetName="mcp:packageDescription"
+	g:minOccurs="1"
+	g:maxOccurs="1"
+	g:label="Process description"
+	g:extends="$base/core/xml/Element.xml">
+
+	<g:namespaces g:overridable="true">
+		<g:namespace g:prefix="wps" g:uri="http://www.opengis.net/wps/1.0.0" />
+		<g:namespace g:prefix="xlink" g:uri="http://www.w3.org/1999/xlink" />
+		<g:namespace g:prefix="xsi" g:uri="http://www.w3.org/2001/XMLSchema-instance" />
+		<g:namespace g:prefix="ows" g:uri="http://www.opengis.net/ows/1.1" />
+		<g:namespace g:prefix="mcp" g:uri="http://gis.geo.tu-dresden.de/movingcode/1.1.0" />
+	</g:namespaces>
+
+	<!-- Package ID + Timestamp -->
+	<g:body>  
+		<g:attribute 
+			g:label="Package id"
+			g:targetName="mcp:packageId"
+			g:use="required"
+			g:extends="$base/core/xml/Attribute.xml" /> 
+		<g:attribute 
+			g:label="Date stamp"
+			g:targetName="mcp:timestamp"
+			g:use="required"
+			g:extends="$base/core/xml/Attribute.xml" />
+	</g:body>
+
+	<g:body>
+		<g:tabs g:extends="$base/core/ui/Tabs.xml">
+			<g:body>
+				<h:div g:label="Functionality">
+					<g:element g:extends="$base/schema/functionality/functionality.xml" />
+				</h:div>
+				<h:div g:label="Platform">
+					<g:element g:extends="$base/schema/dynamic/platform.xml" />
+				</h:div>
+				<h:div g:label="Infrastructure">
+					<g:element g:extends="$base/schema/infrastructure/infrastructure.xml" />
+				</h:div>
+				<h:div g:label="Exploitation rights">
+					<g:element g:extends="$base/schema/exploitationRights/exploitationRights.xml" />
+				</h:div>
+				<h:div g:label="Workspace">
+					<g:element g:extends="$base/schema/workspace/workspace.xml" />
+				</h:div>
+			</g:body>
+		</g:tabs>
+	</g:body>
+</g:element>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files describes editor UI for workspaces for moving code package descriptions. -->
+<!-- @author Jochen Lenz -->
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html" 
+	g:label="Workspace"
+	g:targetName="mcp:workspace"
+	g:extends="$base/core/xml/Element.xml">
+		<g:element 
+			g:label="Workspace root"
+			g:targetName="mcp:workspaceRoot"
+			g:extends="$base/core/xml/ElementTextOnly.xml" />
+			<!-- Type:"xs:anyURI" -->
+		<g:element 
+			g:label="Executable location"
+			g:targetName="mcp:executableLocation" 
+			g:extends="$base/core/xml/ElementTextOnly.xml" />
+			<!-- Type:"xs:anyURI" -->
+ 		<g:element 
+			g:label="Executable method call"
+			g:targetName="mcp:executableMethodCall" 
+			g:extends="$base/core/xml/ElementTextOnly.xml"
+			g:minOccurs="0" /> 
+			<!-- Type:"xs:anyURI" -->	
+-  		<g:element 
+			g:extends="$base/schema/dynamic/container.xml" />
+		<g:element 
+			g:label="Parameters"
+			g:targetName="mcp:executionParameters"
+			g:extends="$base/core/xml/Element.xml">
+			<g:body>
+				<g:attribute
+					g:label="Optional"
+					g:targetName="mcp:optional"
+					g:extends="$base/core/xml/Attribute.xml"
+					g:use="optional">
+					<!-- xs:boolean -->
+					<g:body>
+						<g:input g:extends="$base/core/ui/InputSelectOne.xml">
+							<g:options>
+								<g:option
+									g:value="true"
+									g:label="true" />
+								<g:option
+									g:value="false"
+									g:label="false" />
+							</g:options>
+						</g:input>
+					</g:body>
+				</g:attribute>
+			</g:body>
+				<g:element 
+					g:label="Parameter"
+					g:targetName="mcp:parameter"
+					g:extends="$base/core/xml/Element.xml"
+					g:maxOccurs="unbounded">
+					<g:body>
+						<g:element 
+							g:label="Prefix"
+							g:targetName="mcp:prefixString" 
+							g:extends="$base/core/xml/ElementTextOnly.xml"
+							g:minOccurs="0"/>
+							<!-- type="xs:string" -->
+						<g:element 
+							g:label="Suffix"
+							g:targetName="mcp:suffixString" 
+							g:extends="$base/core/xml/ElementTextOnly.xml"
+							g:minOccurs="0"/>
+							<!-- type="xs:string" -->
+						<g:element 
+							g:label="Separator"
+							g:targetName="mcp:separatorString" 
+							g:extends="$base/core/xml/ElementTextOnly.xml"
+							g:minOccurs="0"/>
+							<!-- type="xs:string" -->
+						<g:elementChoice g:extends="$base/core/xml/ElementChoice.xml">
+							<g:body>
+								<g:element 
+									g:label="Position id"
+									g:targetName="mcp:positionID"
+									g:extends="$base/core/xml/ElementTextOnly.xml" />
+									<!-- <xs:restriction base="xs:positiveInteger"/> -->
+								<g:element 
+									g:label="String id"
+									g:targetName="mcp:stringID"
+									g:extends="$base/core/xml/ElementTextOnly.xml" />
+									<!-- <xs:restriction base="xs:string"/> -->
+							</g:body>
+						</g:elementChoice>
+						<g:element 
+							g:label="Input id"
+							g:targetName="mcp:functionalInputID" 
+							g:extends="$base/core/xml/ElementTextOnly.xml"
+							g:minOccurs="0" />
+							<!-- type="xs:string" -->
+						<g:element 
+							g:label="Output id"
+							g:targetName="mcp:functionalOutputID" 
+							g:extends="$base/core/xml/ElementTextOnly.xml"
+							g:minOccurs="0"/>
+							<!-- type="xs:string" -->
+					</g:body>
+				</g:element>
+		</g:element>
+</g:element>

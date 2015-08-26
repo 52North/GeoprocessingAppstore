@@ -1,0 +1,43 @@
+
+Upload function
+------------------
+
+To use the upload function you need to create a folder C:/MCPackage on your disk
+(it's usually not necessary to set a path, it's created automatically) 
+or change the path in the Class de.tudresden.gis.manage.xml.Constants
+
+
+Review/Comment function
+--------------------------
+
+To use the review/comment function you need to create a folder C:/MCComments on your disk
+or change the path in the File \\geoportal\WEB-INF\classes\gpt\config\gpt.xml
+
+https://github.com/Esri/geoportal-server/wiki/Ratings-and-Comments-for-Search-Results
+
+
+Modify Search Criteria
+--------------------------
+
+https://github.com/Esri/geoportal-server/wiki/Add-Custom-Search-Criteria
+
+
+Use new Schema (MCP)
+--------------------------
+
+https://github.com/Esri/geoportal-server/wiki/Add-a-Custom-Profile
+
+
+Browse Tree anpassen
+--------------------------
+
+https://github.com/Esri/geoportal-server/wiki/Browse-Tree
+
+
+Admin Add Old Metadata Editors
+--------------------------------
+
+Add to addMetadataBody.jsp:
+<f:selectItem itemValue="register" itemLabel="#{gptMsg['catalog.publication.addMetadata.command.register']}"/>
+<f:selectItem itemValue="edit" itemLabel="#{gptMsg['catalog.publication.addMetadata.command.edit']}"/>
+    

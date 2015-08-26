@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes a template for moving code packages -->
+<!-- @author Christin Henzen -->
+
+<mcp:packageDescription xmlns:wps="http://www.opengis.net/wps/1.1.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:mcp="http://gis.geo.tu-dresden.de/movingcode/1.1.0"
+	xsi:schemaLocation="http://gis.geo.tu-dresden.de/movingcode/1.1.0 http://gis.geo.tu-dresden.de/movingcode/1.1.0/CodePackage.xsd"
+	mcp:packageId="" mcp:timestamp="2014-09-26T17:48:00">
+	<mcp:functionality>
+		<mcp:wps100ProcessDescription wps:processVersion="1">
+			<ows:Identifier/>
+			<ows:Title/>
+			<ows:Abstract/>
+			<ows:Metadata xlink:title="" /> 
+			<DataInputs>
+				<Input minOccurs="0" maxOccurs="unbounded">
+					<ows:Identifier/>
+					<ows:Title/>
+					<ows:Abstract/>
+					<ComplexData>
+						<Default>
+							<Format>
+								<MimeType>application/x-format-a</MimeType>
+								<Encoding></Encoding>
+								<Schema></Schema>
+							</Format>
+						</Default>
+						<Supported>
+							<Format>
+								<MimeType>application/x-format-a</MimeType>
+								<Encoding></Encoding>
+								<Schema></Schema>
+							</Format>
+						</Supported>
+					</ComplexData>
+				</Input>
+			</DataInputs>
+			<ProcessOutputs>
+				<Output>
+					<ows:Identifier/>
+					<ows:Title/>
+					<ows:Abstract/>
+					<ComplexOutput>
+						<Default>
+							<Format>
+								<MimeType>application/x-format-a</MimeType>
+								<Encoding></Encoding>
+								<Schema></Schema>
+							</Format>
+						</Default>
+						<Supported>
+							<Format>
+								<MimeType>application/x-format-a</MimeType>
+								<Encoding></Encoding>
+								<Schema></Schema>
+							</Format>
+						</Supported>
+					</ComplexOutput>
+				</Output>
+			</ProcessOutputs>
+		</mcp:wps100ProcessDescription>
+	</mcp:functionality>
+	<mcp:platform
+		mcp:platformId="http://gis.geo.tu-dresden.de/movingcode/platformregistry/platform/java-1.6" />
+	<mcp:infrastructure>
+		<mcp:occi.compute.memory>1</mcp:occi.compute.memory>
+		<mcp:occi.storage.size>1</mcp:occi.storage.size>
+	</mcp:infrastructure>
+	<mcp:exploitationRights>
+		<mcp:creativeCommonsLicense>
+			<mcp:cc.license/>
+			<mcp:dct.title/>
+			<mcp:cc.attributionName/>
+			<mcp:cc.attributionURL/>
+		</mcp:creativeCommonsLicense>
+	</mcp:exploitationRights>
+	<mcp:workspace>
+		<mcp:workspaceRoot/>
+		<mcp:executableLocation/>
+		<mcp:containerType/>
+		<mcp:executionParameters>
+			<mcp:parameter>
+				<mcp:positionID>1</mcp:positionID>
+				<mcp:functionalInputID/>
+			</mcp:parameter> 
+		</mcp:executionParameters>
+	</mcp:workspace>
+</mcp:packageDescription>

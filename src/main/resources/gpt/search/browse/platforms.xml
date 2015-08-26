@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes platforms used in appstore editor -->
+<!-- @author Matthias Müller -->
+
+<tree>
+	<label>name</label>
+	<identifier>id</identifier>
+
+
+	<item>
+		<id>platforms-and-components</id>
+		<name>Platforms and Runtime Components</name>
+		<query>searchText=*:*</query>
+		
+		<!-- Start runtime component definitions -->
+		<item>
+			<id>runtime-component</id>
+			<name>Runtime Component</name>
+			<query>searchText=keywords:"Runtime Component"</query>
+			
+			<!-- Start JAVA runtimes -->
+			<item>
+				<id>java</id>
+				<name>JAVA</name>
+				<query>searchText=keywords:"JAVA"</query>
+				
+				<item>
+					<id>java-1.6</id>
+					<name>JAVA 1.6</name>
+					<query>searchText=keywords:"JAVA 1.6"</query>
+				</item>
+				<item>
+					<id>java-1.7</id>
+					<name>JAVA 1.7</name>
+					<query>searchText=keywords:"JAVA 1.7"</query>
+				</item>
+				<item>
+					<id>java-1.8</id>
+					<name>JAVA 1.8</name>
+					<query>searchText=keywords:"JAVA 1.8"</query>
+				</item>
+			</item>
+			<!-- End JAVA platforms -->
+			
+			<!-- Start Python runtimes -->
+			<item>
+				<id>python</id>
+				<name>Python</name>
+				<query>searchText=keywords:"Python"</query>
+			
+				<item>
+					<id>python-2.7</id>
+					<name>Python 2.7</name>
+					<query>searchText=keywords:"Python 2.7"</query>
+				</item>
+				<item>
+					<id>python-3.3</id>
+					<name>Python 3.3</name>
+					<query>searchText=keywords:"Python 3.3"</query>
+				</item>
+			</item>
+			<!-- End Python runtimes -->
+			
+			<!-- Start Numpy runtimes -->
+			<item>
+				<id>numpy</id>
+				<name>Numpy</name>
+				<query>searchText=keywords:"Numpy"</query>
+				
+				<item>
+					<id>numpy-1.9</id>
+					<name>Numpy 1.9</name>
+					<query>searchText=keywords:"Numpy 1.9"</query>
+				</item>
+				<item>
+					<id>numpy-1.7</id>
+					<name>Numpy 1.7</name>
+					<query>searchText=keywords:"Numpy 1.7"</query>
+				</item>
+			</item>
+			<!-- End Numpy runtimes -->
+			
+			<!-- Start Arcpy runtimes -->
+			<item>
+				<id>arcpy</id>
+				<name>ArcPy</name>
+				<query>searchText=keywords:"ArcPy"</query>
+			
+				<item>
+					<id>arcpy-10.0</id>
+					<name>ArcPy 10.0</name>
+					<query>searchText=keywords:"ArcPy 10.0"</query>
+				</item>
+				<item>
+					<id>arcpy-10.1</id>
+					<name>ArcPy 10.1</name>
+					<query>searchText=keywords:"ArcPy 10.1"</query>
+				</item>
+				<item>
+					<id>arcpy-10.2</id>
+					<name>ArcPy 10.2</name>
+					<query>searchText=keywords:"ArcPy 10.2"</query>
+				</item>
+			</item>
+			<!-- End Arcpy runtimes -->
+			
+			<!-- Start ArcGIS spatial analyst runtimes -->
+			<item>
+				<id>arcgis-sa</id>
+				<name>ArcGIS Spatial Analyst</name>
+				<query>searchText=keywords:"ArcGIS Spatial Analyst"</query>
+			
+				<item>
+					<id>arcgis-sa-10.0</id>
+					<name>ArcGIS Spatial Analyst 10.0</name>
+					<query>searchText=keywords:"ArcGIS Spatial Analyst 10.0"</query>
+				</item>
+				<item>
+					<id>arcgis-sa-10.1</id>
+					<name>ArcGIS Spatial Analyst 10.1</name>
+					<query>searchText=keywords:"ArcGIS Spatial Analyst 10.1"</query>
+				</item>
+				<item>
+					<id>arcgis-sa-10.2</id>
+					<name>ArcGIS Spatial Analyst 10.2</name>
+					<query>searchText=keywords:"ArcGIS Spatial Analyst 10.2"</query>
+				</item>
+			</item>
+			<!-- End ArcGIS spatial analyst runtimes -->
+			
+			<!-- Start ArcGIS network analyst runtimes -->
+			<item>
+				<id>arcgis-na</id>
+				<name>ArcGIS Network Analyst</name>
+				<query>searchText=keywords:"ArcGIS Network Analyst"</query>
+			
+				<item>
+					<id>arcgis-na-10.0</id>
+					<name>ArcGIS Network Analyst 10.0</name>
+					<query>searchText=keywords:"ArcGIS Network Analyst 10.0"</query>
+				</item>
+				<item>
+					<id>arcgis-na-10.1</id>
+					<name>ArcGIS Network Analyst 10.1</name>
+					<query>searchText=keywords:"ArcGIS Network Analyst 10.1"</query>
+				</item>
+				<item>
+					<id>arcgis-na-10.2</id>
+					<name>ArcGIS Network Analyst 10.3</name>
+					<query>searchText=keywords:"ArcGIS Network Analyst 10.3"</query>
+				</item>
+			</item>
+			<!-- End ArcGIS network analyst runtimes -->
+			
+			<!-- Start ArcGIS ArcInfo runtimes -->
+			<item>
+				<id>arcgis-arcinfo</id>
+				<name>ArcGIS - ArcInfo</name>
+				<query>searchText=keywords:"ArcGIS - ArcInfo"</query>
+			
+				<item>
+					<id>arcgis-arcinfo-10.0</id>
+					<name>ArcGIS - ArcInfo 10.0</name>
+					<query>searchText=keywords:"ArcGIS - ArcInfo 10.0"</query>
+				</item>
+				<item>
+					<id>arcgis-arcinfo-10.1</id>
+					<name>ArcGIS - ArcInfo 10.1</name>
+					<query>searchText=keywords:"ArcGIS - ArcInfo 10.1"</query>
+				</item>
+				<item>
+					<id>arcgis-arcinfo-10.2</id>
+					<name>ArcGIS - ArcInfo 10.2</name>
+					<query>searchText=keywords:"ArcGIS - ArcInfo 10.2"</query>
+				</item>
+			</item>
+			<!-- End ArcGIS spatial analyst runtimes -->
+			
+			<!-- Start GDAL runtimes -->
+			<item>
+				<id>gdal</id>
+				<name>GDAL</name>
+				<query>searchText=keywords:"GDAL"</query>
+			
+				<item>
+					<id>gdal-1.8</id>
+					<name>GDAL 1.8</name>
+					<query>searchText=keywords:"GDAL 1.8"</query>
+				</item>
+				<item>
+					<id>gdal-1.9</id>
+					<name>GDAL 1.9</name>
+					<query>searchText=keywords:"GDAL 1.9"</query>
+				</item>
+				<item>
+					<id>gdal-1.10</id>
+					<name>GDAL 1.10</name>
+					<query>searchText=keywords:"GDAL 1.10"</query>
+				</item>
+				<item>
+					<id>gdal-1.11</id>
+					<name>GDAL 1.11</name>
+					<query>searchText=keywords:"GDAL 1.11"</query>
+				</item>
+			</item>
+			<!-- End GDAL runtimes -->
+			
+			<!-- Start GDAL Python bindings -->
+			<item>
+				<id>gdal-python</id>
+				<name>GDAL Python Bindings</name>
+				<query>searchText=keywords:"GDAL Python Bindings"</query>
+				
+				<item>
+					<id>gdal-python-1.8</id>
+					<name>GDAL Python Bindings 1.8</name>
+					<query>searchText=keywords:"GDAL Python Bindings 1.8"</query>
+				</item>
+				<item>
+					<id>gdal-python-1.9</id>
+					<name>GDAL Python Bindings 1.9</name>
+					<query>searchText=keywords:"GDAL Python Bindings 1.9"</query>
+				</item>
+				<item>
+					<id>gdal-python-1.10</id>
+					<name>GDAL Python Bindings 1.10</name>
+					<query>searchText=keywords:"GDAL Python Bindings 1.10"</query>
+				</item>
+				<item>
+					<id>gdal-python-1.11</id>
+					<name>GDAL Python Bindings 1.11</name>
+					<query>searchText=keywords:"GDAL Python Bindings 1.11"</query>
+				</item>
+			</item>
+			<!-- End GDAL Python bindings -->
+		</item>
+		<!-- End runtime component definitions -->
+		
+		<!-- Start platform definitions -->
+		<item>
+			<id>platform</id>
+			<name>Platform</name>
+			<query>searchText=keywords:"Platform"</query>
+			
+			<item>
+				<id>arcgis-arcinfo-complete</id>
+				<name>ArcGIS - Arcinfo Complete Installation</name>
+				<query>searchText=keywords:"ArcGIS - Arcinfo Complete Installation"</query>
+				<item>
+					<id>arcgis-arcinfo-complete-10.1</id>
+					<name>ArcGIS - Arcinfo Complete Installation 10.1</name>
+					<query>searchText=keywords:"ArcGIS - Arcinfo Complete Installation 10.1"</query>
+					<ref>arcgis-arcinfo-10.1</ref>
+					<ref>arcgis-sa-10.1</ref>
+					<ref>arcgis-na-10.1</ref>
+					<ref>arcpy-10.1</ref>
+					<ref>gdal-1.8</ref>
+					<ref>numpy-1.6</ref>
+					<ref>python-2.7</ref>
+				</item>
+				<item>
+					<id>arcgis-arcinfo-complete-10.2</id>
+					<name>ArcGIS - Arcinfo Complete Installation 10.2</name>
+					<query>searchText=keywords:"ArcGIS - Arcinfo Complete Installation 10.2"</query>
+					<ref>arcgis-arcinfo-10.2</ref>
+					<ref>arcgis-sa-10.2</ref>
+					<ref>arcgis-na-10.2</ref>
+					<ref>arcpy-10.2</ref>
+					<ref>gdal-1.8</ref>
+					<ref>numpy-1.6</ref>
+					<ref>python-2.7</ref>
+				</item>
+			</item>
+		</item>
+		<!-- End platform definitions -->
+		
+	</item>
+	
+</tree>

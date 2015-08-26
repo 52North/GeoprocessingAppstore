@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes containers used in appstore editor -->
+<!-- @author Matthias Müller -->
+
+<tree>
+	<label>name</label>
+	<identifier>id</identifier>
+
+
+	<!-- Start container definitions -->
+	<item>
+		<id>container</id>
+		<name>Container type</name>
+		<query>searchText=keywords:"Container"</query>
+
+		<item>
+			<id>java-jar</id>
+			<name>JAVA archive</name>
+			<query>searchText=keywords:"JAVA archive"</query>
+		</item>
+		<item>
+			<id>python-script</id>
+			<name>Python Script</name>
+			<query>searchText=keywords:"Python Script"</query>
+		</item>
+		<item>
+			<id>arctoolbox</id>
+			<name>ArcToolbox</name>
+			<query>searchText=keywords:"ArcToolbox"</query>
+		</item>
+		<item>
+			<id>rscript</id>
+			<name>R script</name>
+			<query>searchText=keywords:"R Script"</query>
+		</item>
+	</item>
+	<!-- End container definitions -->
+
+
+</tree>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html" 
+	g:targetName="ProcessOutputs"
+	g:label="ProcessOutputs"
+	g:extends="$base/core/xml/Element.xml">
+	<g:body>
+		<g:element 
+			g:label="Output"
+			g:targetName="Output"
+			g:maxOccurs="unbounded"
+			g:extends="$base/core/xml/Element.xml">
+			<g:body>
+				<g:element
+					g:label="Identifier"
+					g:targetName="ows:Identifier"
+					g:use="required"
+					g:extends="$base/core/xml/ElementTextOnly.xml" />
+				<g:element
+					g:label="Title" 
+					g:targetName="ows:Title" 
+					g:use="required"
+					g:extends="$base/core/xml/ElementTextOnly.xml" />
+				<g:element 
+					g:label="Abstract"
+					g:targetName="ows:Abstract" 
+					g:minOccurs="0"
+					g:extends="$base/core/xml/ElementTextOnly.xml" />
+				<g:element 
+					g:targetName="ows:Metadata"
+					g:minOccurs="0" 
+					g:maxOccurs="unbounded" 
+					g:label="Keywords"
+					g:extends="$base/core/xml/Element.xml">
+					<g:body>
+						<g:attribute 
+							g:label="Role"
+							g:targetName="xlink:role" 
+							g:extends="$base/core/xml/Attribute.xml" />
+						<g:attribute 
+							g:label="Url"
+							g:targetName="xlink:href" 
+							g:extends="$base/core/xml/Attribute.xml" />
+						<g:attribute 
+							g:label="Keyword"
+							g:targetName="xlink:title" 
+							g:use="required"
+							g:extends="$base/core/xml/Attribute.xml" >
+							<g:body>
+								<g:input g:extends="$base/core/ui/InputSelectOne.xml">
+								
+								<!-- options based on gpt/search/browse/browse-catalog.xml name tags -->
+									<g:options g:i18nBase="catalog.fgdc.idinfo.status.progress.option">
+										<g:option
+											g:value="test"
+											g:label="test" />
+										<g:option
+											g:value="test2"
+											g:label="test2" />
+									</g:options>
+								</g:input>
+							</g:body>
+						</g:attribute>
+					</g:body>
+				</g:element>
+				<g:elementChoice g:extends="$base/core/xml/ElementChoice.xml">
+					<g:body>
+						<!-- ComplexOutput -->
+						<g:element 
+							g:label="Complex output"
+							h:tag="div"
+						 	g:jsClass="gxe.control.Element"
+							g:targetName="ComplexOutput"
+							g:extends="$base/core/xml/Element.xml">
+							<g:body>
+								<g:element 
+									g:targetName="Default" 
+									g:label="Default"
+									g:extends="$base/core/xml/Element.xml">
+									<g:body>
+										<g:element g:extends="$base/schema/functionality/complexDataCombinationType.xml" />
+									</g:body>
+								</g:element>
+								<g:element 
+									g:targetName="Supported" 
+									g:label="Supported"
+									g:extends="$base/core/xml/Element.xml">
+									<g:body>													
+										<g:element g:extends="$base/schema/functionality/complexDataCombinationsType.xml" />
+									</g:body>
+								</g:element>
+							</g:body>
+						</g:element>
+						
+						<!-- LiteralOutput -->
+						<g:element
+							g:label="Literal output"
+						 	h:tag="div"
+						 	g:jsClass="gxe.control.Element"
+							g:targetName="LiteralOutput"
+							g:extends="$base/core/xml/Element.xml">
+							<g:element
+								g:targetName="ows:DataType"
+								minOccures="0"
+								g:extends="$base/core/xml/ElementTextOnly.xml" />
+							<g:element
+								g:targetName="UOMs"
+								minOccures="0"
+								g:extends="$base/core/xml/ElementTextOnly.xml">
+								<g:element
+									g:targetName="Default"
+									g:extends="$base/core/xml/Element.xml">
+									<g:element
+										g:targetName="ows:UOM"
+										g:extends="$base/core/xml/ElementTextOnly.xml" />
+								</g:element>
+								<g:element
+									g:targetName="Supported"
+									g:extends="$base/core/xml/Element.xml">
+										<g:element
+											g:targetName="ows:UOM"
+											maxOccurs="unbounded"
+											g:extends="$base/core/xml/ElementTextOnly.xml" />						
+								</g:element>
+							</g:element>
+						</g:element>
+						
+						<!-- BoundingBoxOutput -->
+						<g:element
+							g:label="Boundingbox output"
+						 	h:tag="div"
+						 	g:jsClass="gxe.control.Element"
+							g:targetName="BoundingBoxOutput"
+							g:extends="$base/core/xml/Element.xml">
+							<g:element 
+								g:targetName="Default"
+								g:extends="$base/core/xml/Element.xml">
+								<g:element 
+									g:targetName="CRS"
+									g:extends="$base/core/xml/ElementTextOnly.xml" />
+									<!-- type="anyURI" -->
+							</g:element>
+							<g:element 
+								g:targetName="Supported"
+								g:extends="$base/core/xml/Element.xml">
+								<g:element 
+									g:targetName="CRS"
+									g:maxOccurs="unbounded"
+									g:extends="$base/core/xml/ElementTextOnly.xml" />
+									<!-- type="anyURI" -->									
+							</g:element>
+						</g:element>		
+					</g:body>
+				</g:elementChoice>						
+			</g:body>
+		</g:element>
+	</g:body>
+</g:element>

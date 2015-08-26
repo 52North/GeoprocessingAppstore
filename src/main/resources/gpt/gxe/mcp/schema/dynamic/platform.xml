@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files defines editor UI for platforms for moving code description packages -->
+<!-- Platforms are available as select box. This box is generated based on gpt.search.browse.platforms.xml -->
+<!-- @author Bernd Grafe, Jochen Lenz -->
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:targetName="mcp:platform"
+	g:label="Platform" 
+	g:extends="$base/core/xml/Element.xml"
+	g:maxOccurs="unbounded">
+	<g:body>
+		<g:attribute 
+			g:label="Platform id"
+			g:targetName="mcp:platformId"
+			g:extends="$base/core/xml/Attribute.xml" 
+			g:use="optional">
+			<!-- type="xs:string" -->
+			<g:body>
+				<g:input g:extends="$base/core/ui/InputSelectOne.xml">
+					<g:options g:i18nBase="catalog.fgdc.idinfo.status.progress.option" time="2014/11/15 22:22:22">
+						<g:option
+							g:value="http://gis.geo.tu-dresden.de/movingcode/platformregistry/platform/java-1.6"
+							g:label="Java 1.6" />
+						<g:option
+							g:value="http://gis.geo.tu-dresden.de/movingcode/platformregistry/platform/java-1.7"
+							g:label="Java 1.7" />
+					</g:options>
+				</g:input>
+			</g:body>
+		</g:attribute>
+	</g:body>
+	<g:element
+		g:label="Required runtime component"
+		g:targetName="requiredRuntimeComponent"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0"
+		g:maxOccurs="unbounded"/>
+		<!-- type="xs:anyURI" -->
+</g:element>

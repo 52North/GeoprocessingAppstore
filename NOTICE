@@ -1,0 +1,123 @@
+Copyright (C) 2015 52�North Initiative for Geospatial Open Source
+Software GmbH
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License version 2 as published
+by the Free Software Foundation.
+
+If the program is linked with libraries which are licensed under one of
+the following licenses, the combination of the program with the linked
+library is not considered a "derivative work" of the program:
+
+      � Apache License, version 2.0
+      � Apache Software License, version 1.0
+      � GNU Lesser General Public License, version 3
+      � Mozilla Public License, versions 1.0, 1.1 and 2.0
+      � Common Development and Distribution License (CDDL), version 1.0
+
+Therefore the distribution of the program linked with libraries licensed
+under the aforementioned licenses, is permitted by the copyright holders
+if the distribution is compliant with both the GNU General Public
+License version 2 and the aforementioned licenses.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.
+
+This project includes:
+  52North Moving Code Runtime under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  Abdera Bundle Jar under The Apache Software License, Version 2.0
+  Activation under The Apache Software License, Version 2.0
+  Activation 1.1 under The Apache Software License, Version 2.0
+  AntLR under Public Domain
+  AOP alliance under Public Domain
+  Apache Commons Lang under Apache License, Version 2.0
+  Apache XML Security under The Apache Software License, Version 2.0
+  arcgis_agsws_stubs under ESRI License Agreement, Version 10.0
+  arcgis_ws_runtime under ESRI License Agreement, Version 10.0
+  Axiom API under The Apache Software License, Version 2.0
+  Axiom Impl under The Apache Software License, Version 2.0
+  bcprov-jdk15 under Bouncycastle license, http://www.bouncycastle.org/licence.html (MIT-style license)
+  Codec under The Apache Software License, Version 2.0
+  Collections under The Apache Software License, Version 2.0
+  Commons BeanUtils under The Apache Software License, Version 2.0
+  Commons Chain under The Apache Software License, Version 2.0
+  Commons Exec under The Apache Software License, Version 2.0
+  Commons IO under The Apache Software License, Version 2.0
+  Commons Lang under The Apache Software License, Version 2.0
+  Commons Logging under The Apache Software License, Version 2.0
+  Commons Net under The Apache Software License, Version 2.0
+  Content Repository for Java Technology API under Day Specification License or Day Specification License addendum
+  Digester under The Apache Software License, Version 2.0
+  Discovery under The Apache Software License, Version 2.0
+  Dough Lea's util.concurrent package under Public domain, Sun Microsoystems
+  ezmorph under The Apache Software License, Version 2.0
+  FileUpload under The Apache Software License, Version 2.0
+  GeoprocessingAppstore Maven Webapp under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  gpt under The Apache Software License, Version 2.0
+  Gson under The Apache Software License, Version 2.0
+  Guava (Google Common Libraries) Annotations under The Apache Software License, Version 2.0
+  Guava (Google Common Libraries) Base under The Apache Software License, Version 2.0
+  Guava (Google Common Libraries) Collections under The Apache Software License, Version 2.0
+  Guava (Google Common Libraries) Primitive Types under The Apache Software License, Version 2.0
+  htmlparser under The MIT License
+  HttpClient under Apache License
+  ibatis-sqlmap under The Apache Software License, Version 2.0
+  ICU4J under ICU License
+  Jackrabbit API under The Apache Software License, Version 2.0
+  Jackrabbit Core under The Apache Software License, Version 2.0
+  Jackrabbit JCR Commons under The Apache Software License, Version 2.0
+  Jackrabbit SPI under The Apache Software License, Version 2.0
+  Jackrabbit SPI Commons under The Apache Software License, Version 2.0
+  Jackrabbit Text Extractors under The Apache Software License, Version 2.0
+  JavaBeans Activation Framework (JAF) under Common Development and Distribution License (CDDL) v1.0
+  JavaMail 1.4 under The Apache Software License, Version 2.0
+  JavaMail API under Common Development and Distribution License (CDDL) v1.0
+  JavaServer Pages(TM) Standard Tag Library API under CDDL + GPLv2 with classpath exception
+  jaxen under jaxen license, http://jaxen.codehaus.org/license.html
+  Jena under BSD
+  Jena IRI under BSD-style license
+  Joda-Time under Apache 2
+  JOpenId under The Apache Software License, Version 2.0
+  JSON in Java under The JSON License
+  json-lib under The Apache Software License, Version 2.0
+  JSON.simple under The Apache Software License, Version 2.0
+  JUnit under Common Public License Version 1.0
+  Log4j under The Apache Software License, Version 2.0
+  Lucene Core under Apache 2
+  Lucene Grouping under Apache 2
+  Lucene Queries under Apache 2
+  mc-xml-processors under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  Moving Code XML Schema under Apache License, Version 2.0
+  OGC OWS schema (spec. v1.1.0) under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  OGC WPS schema (spec. v1.0.0) under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  Oracle's implementation of the JSF 2.1 specification API. under COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) plus GPL
+  oro under The Apache Software License, Version 1.1
+  PostgreSQL JDBC Driver under BSD License
+  REngine under GNU General Public License, version 2
+  RserveEngine under GNU General Public License, version 2
+  servlet-api under CDDL 1.1 or GPL2 w/ CPE
+  SLF4J API Module under MIT license
+  SLF4J LOG4J-12 Binding under MIT license
+  Spring Framework: Beans under The Apache Software License, Version 2.0
+  Spring Framework: Context under The Apache Software License, Version 2.0
+  Spring Framework: Core under The Apache Software License, Version 2.0
+  Spring Framework: Web under The Apache Software License, Version 2.0
+  standard under The Apache Software License, Version 2.0
+  StAX API under The Apache Software License, Version 2.0
+  Streaming API for XML (STAX API 1.0) under The Apache Software License, Version 2.0
+  Struts Core under The Apache Software License, Version 2.0
+  Struts Tiles under The Apache Software License, Version 2.0
+  Sun's implementation of the JSF 2.0 specification. under COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) plus GPL
+  tomcat-servlet-api under Apache License, Version 2.0 and
+        Common Development And Distribution License (CDDL) Version 1.0
+  twitter4j under BSD style
+  Validator under The Apache Software License, Version 2.0
+  W3C xlink schema (spec. v1.1.0) under GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+  Woodstox under The Apache Software License, Version 2.0
+  xalan under The Apache Software License, Version 2.0
+  xercesImpl under The Apache Software License, Version 2.0
+  XML Commons External Components XML APIs under The Apache Software License, Version 2.0
+  XmlBeans under The Apache Software License, Version 2.0
+

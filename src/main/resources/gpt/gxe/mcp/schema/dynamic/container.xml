@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files defines editor UI for container types for moving code description packages -->
+<!-- Container types are available as select box. This box is generated based on gpt.search.browse.containers.xml -->
+<!-- @author Bernd Grafe, Jochen Lenz -->
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:label="Container type"
+	g:targetName="mcp:containerType" 
+	g:extends="$base/core/xml/ElementTextOnly.xml">
+	<!-- Type:"xs:anyURI" -->
+	<g:body>
+		<g:input g:extends="$base/core/ui/InputSelectOne.xml">
+			<g:options g:i18nBase="catalog.fgdc.idinfo.status.progress.option" time="2014/11/15 22:22:22">
+			</g:options>
+		</g:input>
+	</g:body>			
+</g:element>

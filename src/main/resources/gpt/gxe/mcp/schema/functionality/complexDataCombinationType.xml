@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<g:element xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:targetName="Format" 
+	g:label="Format"
+	g:extends="$base/core/xml/Element.xml">
+	<g:body>
+		<g:element 
+			g:label="Mime type"
+			g:targetName="MimeType"
+			g:extends="$base/core/xml/ElementTextOnly.xml" />
+			<!-- type="ows:MimeType" -->
+		<g:element 
+			g:label="Encoding"
+			g:targetName="Encoding" 
+			g:minOccurs="0"
+			g:extends="$base/core/xml/ElementTextOnly.xml" />
+			<!-- type="anyURI" -->
+		<g:element 
+			g:label="Schema"
+			g:targetName="Schema" 
+			g:minOccurs="0"
+			g:extends="$base/core/xml/ElementTextOnly.xml" />
+			<!-- type="anyURI" -->
+	</g:body>
+</g:element>

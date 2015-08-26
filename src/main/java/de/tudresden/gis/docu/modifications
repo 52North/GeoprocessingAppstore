@@ -1,0 +1,42 @@
+Java
+-------------------------------------------------------------
+com.esri.gpt.catalog.search/SearchCriteria (erweiterte Suche)
+com.esri.gpt.control.publication.UploadMetadataController (Upload)
+com.esri.gpt.catalog.publication.UploadRequest (Upload)
+com.esri.gpt.catalog.publication.PublicationRequest.java (Upload)
+com.esri.gpt.catalog.arcims.PutMetadataRequest (Upload)
+com.esri.gpt.control.rest.ManageDocumentServlet (ZIP Erzeugung/Upload/JSON Lists)
+com.esri.gpt.webharvest.client.atom.AGPEntryProcessor (RSS)
+com.esri.gpt.control.georss (RSS)
+IMSMetadataProxyDao
+com.esri.gpt.control.search.SearchController (Download)
+com.esri.gpt.control.publication.EditMetaDataController(Schema nur MCP)
+com.esri.gpt.server.assertion.handler.AsnRequestHandler(rating in db ändern)
+com.esri.gpt.server.assertion.index.AsnIndexReference (IndexAdapter ohne Context - db rating)
+com.esri.gpt.server.assertion.components.AsnOperations (Operation ohne Context - db rating)
+
+XML
+-------------------------------------------------------------
+gpt.metadata/property-meanings.xml (erweiterte Suche)
+gpt.search.profiles/CSW_2.0.2_OGCCORE_ESRI_GPT_GetRecords_Response.xslt (RSS, Icons in Trefferliste)
+
+
+Frontend
+-------------------------------------------------------------
+WebContent/catalog/search/criteria.jsp (erweiterte Suche)
+WebContent/catalog/search/results.jsp (Icons in Trefferliste)
+WebContent/catalog/search/searchBody.jsp (erweiterte Suche)
+WebContent/catalog/publication/uploadMetadataBody.jsp (Upload)
+WebContent/catalog/skins/tiles/secondaryNavigation.jsp (Manage Geooperators)
+WebContent/catalog/publication/gxeEditorBody.jsp (Upload)
+WebContent/catalog/search/viewMetaDataDetailsBody.jsp (Download)
+WebContent/catalog/main/homeBody.jsp (recent+top rated)
+WebContent/catalog/publication/addMetadataBody.java (Create+Upload)
+
+
+Configs
+-------------------------------------------------------------
+src/gpt/resources/gpt.properties (Anzeigenamen, Geooperator backend, Detailansicht, ...) 
+
+WebContent/WEB-INF/gpt-faces-config.xml (erweiterte Suche)
+WebContent/WEB-INF/web.xml

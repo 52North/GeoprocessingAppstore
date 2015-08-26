@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:targetName="ows:Metadata"
+	g:minOccurs="0" 
+	g:maxOccurs="unbounded" 
+	g:label="Keywords"
+	g:extends="$base/core/xml/Element.xml">
+	<g:body>
+		<g:attribute 
+			g:label="Role"
+			g:targetName="xlink:role" 
+			g:extends="$base/core/xml/Attribute.xml" />
+		<g:attribute 
+			g:label="Url"
+			g:targetName="xlink:href" 
+			g:extends="$base/core/xml/Attribute.xml" />
+		<g:attribute 
+			g:label="Keyword"
+			g:targetName="xlink:title" 
+			g:extends="$base/core/xml/Attribute.xml" >
+			<g:body>
+				<g:input g:extends="$base/core/ui/InputSelectOne.xml">
+				<!-- options based on gpt/search/browse/browse-catalog.xml name tags - created on server start (de/tudresden/gis/mcp2geoportal/StartController 
+				<g:option g:value="test" g:label="test" />
+				-->
+					<g:options g:i18nBase="catalog.fgdc.idinfo.status.progress.option" time="2014/11/15 22:22:22">
+						<g:option
+							g:value="test"
+							g:label="test" />
+						<g:option
+							g:value="test2"
+							g:label="test2" />
+						<g:option
+							g:value="test4"
+							g:label="test4" />
+					</g:options>
+				</g:input>
+			</g:body>
+		</g:attribute>
+	</g:body>
+</g:element>

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="de">
+  <head>	
+    <title>Geoprocessing Appstore
+    </title>     
+    <link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/2.5/js/dojo/dijit/themes/tundra/tundra.css" />
+    <link rel="stylesheet" type="text/css" href="/appstore/catalog/skins/themes/blue/main.css"  />
+    <link rel="stylesheet" type="text/css" href="/appstore/catalog/skins/themes/blue/preview.css"  />
+    <link rel="icon" type="image/x-icon"   href="/appstore/catalog/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/appstore/catalog/images/favicon.ico" />
+	
+	
+	<link type="text/css" rel="stylesheet" href="css/wps-js.css">
+	<style type="text/css">
+		label.wps-item-label { 
+			margin-right: 0.5em;
+			padding: 0.1em; 
+			width: 100px;
+			display: inline-block; 
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+		
+		div.wps-capabilities-full-link {
+			padding-top: 40px;
+		} 
+		
+		p.infotext, div.wps-container, div.wps-execute-container, li.wps-execute-response-list-entry {
+			padding-top: 20px;
+		}
+		
+		.line {
+			background-color: #CDD4E2;
+			border-style: none;
+			border-width: 1px;
+			clear: left;
+			height: 1px;
+			margin: 0.5em 0;
+			overflow: hidden;
+		}
+	</style>
+	
+<script type="text/javascript">
+  djConfig = {parseOnLoad: true, locale: 'en'};
+</script>
+<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=2.5"></script>
+<script type="text/javascript">
+  esri.config.defaults.io.proxyUrl = "/appstore/catalog/download/proxy.jsp";
+</script>
+<script type="text/javascript" src="/appstore/catalog/js/v1/GPTMapViewer.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1/jquery-1.2.3.pack.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1/ui.datepicker.packed.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1.2/gpt.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1/Utils.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1.2.3/livedata.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1/gpt-asn.js"></script>
+<script type="text/javascript" src="/appstore/catalog/js/v1.2.2/gpt-browse.js"></script>
+
+<script src="js/jquery/jquery.1.8.3.min.js"></script>
+<script src="js/jquery/jquery-ui.1.8.3.min.js"></script>
+<script src="js/openlayers/OpenLayers-closure.js"></script>
+<script src="js/wps-js/wps-js.0.1.1.js"></script>
+	 
+<script type="text/javascript" language="javascript">/* Component id = cmPlGptMvsUrl*/var mainGptMvsUrl = "";</script> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link rel="search" type="application/opensearchdescription+xml"    title="Geoportal Search"   href="/appstore/openSearchDescription" />
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#cmPlPgpGptMessages span").each(function (i) {
+		var htmlStr = $(this).html();
+		$(this).html(htmlStr.replace(/&lt;br \/&gt;/g,'<br />'));
+	});
+});
+function openHelp(sTitle, sKey) {
+	var sUrl = "/appstore/webhelp/index.jsp";
+	var sLang= "de";
+	var sVers= "1.2.5";
+	if (sKey) sUrl += "?cmd="+sKey;
+	if (sLang) {
+	  if (sKey) {
+	    sUrl += "&";
+	  } else {
+	    sUrl += "?";
+	  }
+	  sUrl += "lang="+sLang;
+	}
+	if (sVers) {
+	  if (sKey || sLang) {
+	    sUrl += "&";
+	  } else {
+	    sUrl += "?";
+	  }
+	  sUrl += "vers="+sVers;
+	}
+	var sOpt = "left=10,top=10,width=770,height=450";
+	sOpt += ",toolbar=0,location=0,directories=0,status=0,resizable=yes,scrollbars=yes";
+	var winHelp = window.open(sUrl,sTitle,sOpt);
+	winHelp.focus();
+}
+function mainOpenHelp() {
+	openHelp("GPT_Help", "toc");
+}
+function mainOpenInternalLink(oLink,sHref) {
+	if (oLink && oLink.href && sHref) {
+		oLink.href = "/appstore/"+sHref;
+	}
+}
+function mainOpenPageHelp() {
+	openHelp("GPT_Context_Help", "catalog.search.resource.details");
+}
+// Global variable to be used for map viewer
+var mainGptMapViewer = new GptMapViewer(mainGptMvsUrl);
+/**
+ * Opens the map viewer
+ * @returns false always
+ */
+function mainOpenDefaultMapViewer() {
+	if(!GptUtils.exists(mainGptMapViewer) || !GptUtils.exists(mainGptMapViewer.openDefaultMap)) {
+		return false;
+	}
+	var win = mainGptMapViewer.openDefaultMap();
+	if(GptUtils.exists(win) && GptUtils.exists(win.focus)) {
+		win.focus();
+	}
+	return false;
+}
+</script>
+  </head>
+  <body>	
+    <div id="gptMainWrap" style="position: static;">	    		
+      <div id="gptTopBar">			
+        <div id="gptSkip">				
+          <ul>					
+            <li>
+            <a href="#gptBody">
+              <span id="txtSkipToContent">Skip to content
+              </span></a>
+            </li>				
+          </ul>			
+        </div>			
+        <div id="gptTertiaryNavigation">				 			
+        </div>		
+      </div>		 		
+      <div id="gptBanner">			 
+<script type="text/javascript" src="/appstore/gpt/GptCore.js"></script> 
+<script type="text/javascript">	
+  GptCore.config["GptCore.serverContextPath"] = "/appstore";
+  GptCore.config["GptCore.clientContextPath"] = "/appstore"; 
+</script>    
+        </script>  
+        <div id="gptTitle">	Geoprocessing Appstore 
+        </div>
+        <form id="frmTertiaryNavigation" name="frmTertiaryNavigation" method="post" action="/appstore/catalog/search/resource/details.page" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="frmTertiaryNavigation" value="frmTertiaryNavigation" />
+<script type="text/javascript" src="/appstore/javax.faces.resource/jsf.js.page?ln=javax.faces"></script>
+          <a id="frmTertiaryNavigation:identityFeedback" href="#" onclick="mojarra.jsfcljs(document.getElementById('frmTertiaryNavigation'),{'frmTertiaryNavigation:identityFeedback':'frmTertiaryNavigation:identityFeedback'},'');return false" class="">Feedback</a>
+          <a id="frmTertiaryNavigation:contentAbout" href="#" onclick="mojarra.jsfcljs(document.getElementById('frmTertiaryNavigation'),{'frmTertiaryNavigation:contentAbout':'frmTertiaryNavigation:contentAbout'},'');return false" class="">About</a>
+          <a id="frmTertiaryNavigation:openHelp" name="frmTertiaryNavigation:openHelp" href="#" onclick="javascript:mainOpenPageHelp()">Help</a>
+          <a id="frmTertiaryNavigation:identityLogin" href="#" onclick="mojarra.jsfcljs(document.getElementById('frmTertiaryNavigation'),{'frmTertiaryNavigation:identityLogin':'frmTertiaryNavigation:identityLogin'},'');return false" class="">Login</a>
+          <span id="frmTertiaryNavigation:msgNonAuthenticatedUser">
+          </span>
+          <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-107791616205076714:-2453793090848811773" autocomplete="off" />
+        </form>		
+      </div>		
+      <div style="clear:both">
+      </div>		
+      <div id="gptPrimaryNavigation">			   
+        <form id="frmPrimaryNavigation" name="frmPrimaryNavigation" method="post" action="/appstore/catalog/search/resource/details.page" enctype="application/x-www-form-urlencoded">
+          <input type="hidden" name="frmPrimaryNavigation" value="frmPrimaryNavigation" />
+          <a id="frmPrimaryNavigation:mainHome" href="../../catalog/main/home.page" class="">Home</a>
+          <a id="frmPrimaryNavigation:searchHome" href="../../catalog/search/search.page" class="">Search  </a>
+          <a id="frmPrimaryNavigation:browse" href="../../catalog/search/browse/browse.page" class="">Browse algorithms</a>
+          <a id="frmPrimaryNavigation:geooperators" href="../knowledge/geooperators.page" class="">Browse geooperators</a>
+          <input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="-107791616205076714:-2453793090848811773" autocomplete="off" />
+        </form>		
+      </div>		
+      <div style="clear:both">
+      </div>		
+      <div id="gptBody">  
+			<h1><span id="cmPlPcCaption">
+				Capabilities
+				</span>
+			</h1>
+	  
+  <table id="cmPlPgdNavMenuAndMainBody" class="pageContent" cellpadding="0" cellspacing="0" summary="This table is for design purposes only.">
+<tbody>
+<tr>
+<td><table id="cmPlPgdPageContentBody" class="pageContentRight" cellpadding="0" cellspacing="0" summary="This table is for design purposes only.">
+<tbody>
+<tr>
+	
+			
+		<div>
+			<h3 style="padding-top:40px;">All Available Processes</h3>
+			<div class="wps-container">
+				<select id="processes"><option>Select a process</option></select>
+				<span id="processDescriptionLink"></span>
+				<div class="wps-execute-container" id="wps-execute-container"></div>
+			</div>
+			<p></p>
+			<div class="wps-container">
+				<div id="executeProcess"></div>
+			</div>
+		</div> 
+		
+		<div class="line"></div>
+		<div class="wps-container">
+				<div id="capabilitiesByClick" class="prompt"></div>
+			</div> 
+		
+	<script type="text/javascript">
+		var capabilities, // the capabilities, read by Format.WPSCapabilities::read
+		process; // the process description from Format.WPSDescribeProcess::read
+
+		//fixed wps
+		//wps - temporary - change to local wps when drop in box is fixed
+		var wps_url = "http://apps1.glues.geo.tu-dresden.de:8080/52n-wps-webapp/WebProcessingService";
+		
+		//set proxy for settings and call capabilities
+		//BG:proxy url is disabled in wps-js0.1.1.js (BaseRequest) to work properly - TODO:is it OK?
+		$.wpsSetup({
+			proxy : {
+				url : "/wps_proxy/wps_proxy?url=",
+				type : "parameter"
+			},
+			configuration : {
+			    showImages : true
+			}				
+		});
+		//BG:call for capabilities
+		getCapabilities(wps_url);
+
+		$('#capabilitiesByClick').wpsCall({
+			url : wps_url,
+			requestType : GET_CAPABILITIES_TYPE
+		});
+
+		var uuid = getURLParam("uuid"); 
+		 
+		//DONE: -> catch id, title from geoportal - compare with available processes from wps and call describe process
+		//CH: added 2015-01-23 
+		var infourl = "http://apps1.glues.geo.tu-dresden.de:8080/appstore/rest/document?id=" + uuid;	
+		var appstoreIdentifier = "";
+		
+		$.ajax({
+		    type: "GET",
+		    async: false,   
+		    url: infourl, 
+		    dataType: "xml", 
+		    success: function(msg) { 
+		    	response = msg;  
+				ows = "http://www.opengis.net/ows/1.1";
+				if (response.getElementsByTagNameNS(ows, "Identifier")[0])
+					if (response.getElementsByTagNameNS(ows, "Identifier")[0].childNodes[0])
+						if (response.getElementsByTagNameNS(ows, "Identifier")[0].childNodes[0].data) {
+							appstoreIdentifier = response.getElementsByTagNameNS(ows, "Identifier")[0].childNodes[0].data; 
+							console.log(appstoreIdentifier); 
+							
+							var selectOptions = document.getElementById("processes").options;
+							if (appstoreIdentifier) {
+								for (var i = 0; i < selectOptions.length; i++) {
+									if (selectOptions[i].value == appstoreIdentifier) { 
+										document.getElementById("processes").options[i].selected = true;
+										describeProcess(appstoreIdentifier,null,null);
+									}
+								}
+							}
+							
+						}	
+		    },
+		    error: function(err) {  
+			    if (err.status == 200) {
+				    console.log(err.responseText);
+			    } else { console.log('Error:' + err.responseText + '  Status: ' + err.status); }		    
+			    response = err.responseText; 
+		    }
+		});
+		//CH end
+
+		// add behavior to html elements
+		document.getElementById("processes").onchange = function() {
+			var sel = document.getElementById("processes");
+			
+			describeProcess(sel.options[sel.selectedIndex].text);
+		};
+
+	
+		//get parameter
+		function getURLParam(name) {
+			name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+
+			var regexS = "[\\?&]" + name + "=([^&#]*)";
+			var regex = new RegExp( regexS );
+			var results = regex.exec( window.location.href );
+
+			if ( results == null )
+				return "";
+			else
+				return results[1];
+		}
+	</script>
+
+	<div class="line"></div>
+	<div>
+		<p class="infotext">wps-js-0.1.1 #ba29e35 as of 20141107104739, build at 20150102-1936</p>
+	</div>
+	  
+	  
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>	
+	  
+      </div>		
+      <div style="clear:both">
+      </div>		
+      <div id="gptFooter">			 
+        <span id="gptFooterStatement">The Geoprocessing Appstore was built using the ESRI Geoportal Server. Please read the 
+          <a id="ftDisclaimer" href="#" onclick="javascript:mainOpenInternalLink(this,'catalog/content/disclaimer.page')">Disclaimer</a> and 
+          <a id="ftPrivacy" href="#" onclick="javascript:mainOpenInternalLink(this,'catalog/content/privacy.page')">Privacy</a> or 
+          <a id="ftFeedback" href="#" onclick="javascript:mainOpenInternalLink(this,'catalog/identity/feedback.page')">Contact Us</a>.
+        </span>		
+      </div>  
+    </div> 
+    <!-- gptMainWrap -->  
+  </body>
+</html>

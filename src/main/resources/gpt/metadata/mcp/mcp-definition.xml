@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes detail view for one moving code package description based on outdated ESRI editor. -->
+<!-- Description for new detail view mode is prepared in mcp-view.xsl -->
+<!-- @author Christin Henzen, Jochen Lenz -->
+ 	
+    <schema key="mcp" templateFile="gpt/metadata/mcp/mcp-template.xml" 
+    		detailsXslt="gpt/metadata/mcp/mcp-view.xsl"
+    		xsdLocation="http://gis.geo.tu-dresden.de/movingcode/1.1.0/CodePackage.xsd"> 
+    		    
+	<!-- schema label -->
+	<label resourceKey="catalog.mdParam.schema.mcp.services"/>
+
+	<!-- schema namespaces --> 
+	<namespace prefix="wps" uri="http://www.opengis.net/wps/1.0.0"/>
+	<namespace prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+	<namespace prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
+	<namespace prefix="ows" uri="http://www.opengis.net/ows/1.1"/>
+	<namespace prefix="mcp" uri="http://gis.geo.tu-dresden.de/movingcode/1.1.0"/>
+
+	<!-- schema interrogation -->
+	<interrogation count="count(/mcp:packageDescription)"/>
+
+  	<!-- indexables -->
+  	<indexables fileName="gpt/metadata/mcp/mcp-indexables.xml"/>
+  
+  	<!-- Geoportal XML editor -->
+  	<editor fileName="gpt/gxe/mcp/mcp-editor.xml"/>
+  
+	<!-- general section -->
+	<section key="packagedescription">
+		<label resourceKey="catalog.mdParam.schema.mcp.packagedescription"/>
+		
+		<parameter key="catalog.mdParam.schema.mcp.packageid" meaning="packageId">
+			<label resourceKey="catalog.mdParam.schema.mcp.packageid"/>
+			<input type="text" size="50" maxlength="2048" defaultValue="#{EditMetadataController.newUuid}"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" deleteParentIfEmpty="true" select="/mcp:packageDescription/@mcp:packageId"/>
+		</parameter>
+ 
+		<!--"date that the metadata was created" as per standard -->
+		<parameter key="catalog.mdParam.schema.mcp.datestamp" meaning="datestamp">
+			<label resourceKey="catalog.mdParam.schema.mcp.datestamp"/>
+			<input type="text" size="20" maxlength="10" hintResourceKey="catalog.general.inputDateFormat" defaultValue="#{EditMetadataController.now}"/>
+			<validation required="true" valueType="date"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/@mcp:timestamp"
+                 update="/mcp:packageDescription/@mcp:timestamp"/>
+		</parameter> 
+	</section>
+	<section key="processdescription">
+		<label resourceKey="catalog.mdParam.schema.mcp.processdescription"/>
+	 	
+	 	<parameter key="catalog.mdParam.schema.mcp.processversion" meaning="identifier">
+			<label resourceKey="catalog.mdParam.schema.mcp.processversion"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/@wps:processVersion"/>
+		</parameter>
+	 
+	 	<parameter key="catalog.mdParam.schema.mcp.processdescriptionidentifier" meaning="identifier">
+			<label resourceKey="catalog.mdParam.schema.mcp.processdescriptionidentifier"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Identifier"/>
+		</parameter> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.title" meaning="title">
+			<label resourceKey="catalog.mdParam.schema.mcp.title"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Title"/>
+		</parameter> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.abstract" meaning="abstract">
+			<label resourceKey="catalog.mdParam.schema.mcp.abstract"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Abstract"/>
+		</parameter>
+	
+		<!-- 
+			More than one keyword can occur 
+			set: in input-Tag: delimiter=", " 
+			set: in content-Tag: nodeType="list" 	
+		-->
+		<parameter key="catalog.mdParam.schema.mcp.keyword" meaning="keywords">
+			<label resourceKey="catalog.mdParam.schema.mcp.keyword"/>
+			<input type="text" delimiter=", "/>
+			<validation required="false"/>
+			<content nodeType="list" useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ows:Metadata/@xlink:title"/>
+		</parameter>
+	</section>
+	
+	<!-- DATA INPUTS -->
+	
+	<section key="datainputs" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs">
+		<label resourceKey="catalog.mdParam.schema.mcp.datainputs"/>
+		 
+		<section key="input" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input">
+			<label resourceKey="catalog.mdParam.schema.mcp.input"/>
+		
+			<parameter key="catalog.mdParam.schema.mcp.inputminoccurs" meaning="keywords">
+				<label resourceKey="catalog.mdParam.schema.mcp.minoccurs"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/@minOccurs"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputmaxoccurs" meaning="keywords">
+				<label resourceKey="catalog.mdParam.schema.mcp.maxoccurs"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/@maxOccurs"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputidentifier" meaning="inputidentifier">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputidentifier"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/ows:Identifier"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputtitle" meaning="inputtitle">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputtitle"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/ows:Title"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputabstract" meaning="inputabstract">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputabstract"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/ows:Abstract"/>
+			</parameter>
+			 
+			<parameter key="catalog.mdParam.schema.mcp.inputdefaultformat" meaning="inputdefaultformat">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputdefaultformat"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/ComplexData/Default/Format/MimeType"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputsupportedformat" meaning="inputsupportedformat">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputsupportedformat"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/ComplexData/Supported/Format/MimeType"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.inputliteraldata" meaning="inputliteraldata">
+				<label resourceKey="catalog.mdParam.schema.mcp.inputliteraldata"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/DataInputs/Input/LiteralData"/>
+			</parameter>
+		</section>
+	</section>
+	
+	<!-- PROCESS OUTPUTS -->
+	
+	<section key="processoutput">
+		<label resourceKey="catalog.mdParam.schema.mcp.processoutput"/> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.outputidentifier" meaning="outputidentifier">
+			<label resourceKey="catalog.mdParam.schema.mcp.outputidentifier"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/ows:Identifier"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.outputtitle" meaning="outputtitle">
+			<label resourceKey="catalog.mdParam.schema.mcp.outputtitle"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/ows:Title"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.outputabstract" meaning="outputabstract">
+			<label resourceKey="catalog.mdParam.schema.mcp.outputabstract"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/ows:Abstract"/>
+		</parameter>
+		
+		<!-- TODO: Not complex data -->
+		<parameter key="catalog.mdParam.schema.mcp.outputdefaultformat" meaning="outputdefaultformat">
+			<label resourceKey="catalog.mdParam.schema.mcp.outputdefaultformat"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/ComplexOutput/Default/Format/MimeType"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.outputsupportedformat" meaning="inputsupportedformat">
+			<label resourceKey="catalog.mdParam.schema.mcp.inputsupportedformat"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/ComplexOutput/Supported/Format/MimeType"/>
+		</parameter> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.outputliteraldata" meaning="outputliteraldata">
+			<label resourceKey="catalog.mdParam.schema.mcp.outputliteraldata"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:functionality/mcp:wps100ProcessDescription/ProcessOutputs/Output/LiteralData"/>
+		</parameter>
+	</section>
+	
+	<!-- PLATFORM -->
+	
+	<section key="platform">
+		<label resourceKey="catalog.mdParam.schema.mcp.platform"/> 
+		
+		<!-- 
+			More than one platform can occur 
+			set: in input-Tag: delimiter=", " 
+			set: in content-Tag: nodeType="list" 	
+		-->
+		<parameter key="catalog.mdParam.schema.mcp.platform" meaning="platform">
+			<label resourceKey="catalog.mdParam.schema.mcp.platformid"/>
+			<input type="text" delimiter=", "/>
+			<validation required="false"/>
+			<content nodeType="list" useSelectForUpdate="true" select="/mcp:packageDescription/mcp:platform/@mcp:platformId"/>
+		</parameter> 
+		
+		<!-- 
+			More than one runtime can occur 
+			set: in input-Tag: delimiter=", " 
+			set: in content-Tag: nodeType="list" 	
+		-->
+		<parameter key="catalog.mdParam.schema.mcp.requiredruntime" meaning="requiredruntime">
+			<label resourceKey="catalog.mdParam.schema.mcp.requiredruntime"/>
+			<input type="text" delimiter=", "/>
+			<validation required="false"/>
+			<content nodeType="list" useSelectForUpdate="true" select="/mcp:packageDescription/mcp:platform/mcp:requiredRuntimeComponent"/>
+		</parameter>  
+	</section>
+
+	<!-- INFRASTRUCTURE -->
+	
+	<section key="infrastructure">
+		<label resourceKey="catalog.mdParam.schema.mcp.infrastructure"/> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.architecture" meaning="architecture">
+			<label resourceKey="catalog.mdParam.schema.mcp.architecture"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:infrastructure/mcp:occi.compute.architecture"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.cores" meaning="cores">
+			<label resourceKey="catalog.mdParam.schema.mcp.cores"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:infrastructure/mcp:occi.compute.cores"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.memory" meaning="memory">
+			<label resourceKey="catalog.mdParam.schema.mcp.memory"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:infrastructure/mcp:occi.compute.memory"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.speed" meaning="speed">
+			<label resourceKey="catalog.mdParam.schema.mcp.speed"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:infrastructure/mcp:occi.compute.speed"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.size" meaning="size">
+			<label resourceKey="catalog.mdParam.schema.mcp.size"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:infrastructure/mcp:occi.storage.size"/>
+		</parameter>  
+	</section>
+	
+	<!-- EXPLOITATION RIGHTS -->
+	
+	<section key="exploitationrights">
+		<label resourceKey="catalog.mdParam.schema.mcp.exploitationrights"/> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.cclicense" meaning="cclicense">
+			<label resourceKey="catalog.mdParam.schema.mcp.cclicense"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:cc.license"/>
+		</parameter> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.dcttitle" meaning="dcttitle">
+			<label resourceKey="catalog.mdParam.schema.mcp.dcttitle"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:dct.title"/>
+		</parameter>  
+		
+		<parameter key="catalog.mdParam.schema.mcp.attributionname" meaning="attributionname">
+			<label resourceKey="catalog.mdParam.schema.mcp.attributionname"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:cc.attributionname"/>
+		</parameter>  
+		
+		<parameter key="catalog.mdParam.schema.mcp.attributionurl" meaning="attributionurl">
+			<label resourceKey="catalog.mdParam.schema.mcp.attributionurl"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:cc.attributionurl"/>
+		</parameter>  
+		
+		<parameter key="catalog.mdParam.schema.mcp.dctsource" meaning="dctsource">
+			<label resourceKey="catalog.mdParam.schema.mcp.dctsource"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:dct.source"/>
+		</parameter>  
+		
+		<parameter key="catalog.mdParam.schema.mcp.ccmorepermissions" meaning="ccmorepermissions">
+			<label resourceKey="catalog.mdParam.schema.mcp.ccmorepermissions"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:creativeCommonsLicense/mcp:cc.morePermissions"/>
+		</parameter> 
+		 
+		<parameter key="catalog.mdParam.schema.mcp.tradlicdoc" meaning="tradlicdoc">
+			<label resourceKey="catalog.mdParam.schema.mcp.tradlicdoc"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:exploitationrights/mcp:traditionalLicenseDocument"/>
+		</parameter> 
+		
+	</section>
+	
+	<!-- WORKSPACE -->
+	
+	<section key="workspace">
+		<label resourceKey="catalog.mdParam.schema.mcp.workspace"/> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.wsroot" meaning="wsroot">
+			<label resourceKey="catalog.mdParam.schema.mcp.wsroot"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:workspaceRoot"/>
+		</parameter>
+		
+		<parameter key="catalog.mdParam.schema.mcp.wsexelocation" meaning="wsexelocation">
+			<label resourceKey="catalog.mdParam.schema.mcp.wsexelocation"/>
+			<input type="text"/>
+			<validation required="true"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executableLocation"/>
+		</parameter> 
+		
+		<parameter key="catalog.mdParam.schema.mcp.wsexemethcall" meaning="wsexemethcall">
+			<label resourceKey="catalog.mdParam.schema.mcp.wsexemethcall"/>
+			<input type="text"/>
+			<validation required="false"/>
+			<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executableMethodCall"/>
+		</parameter> 
+		
+		<!-- 
+			More than one platform can occur 
+			set: in input-Tag: delimiter=", " 
+			set: in content-Tag: nodeType="list" 	
+		-->
+		<parameter key="catalog.mdParam.schema.mcp.containertype" meaning="containertype">
+			<label resourceKey="catalog.mdParam.schema.mcp.containertype"/>
+			<input type="text" delimiter=", " />
+			<validation required="false"/>
+			<content nodeType="list" useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:containerType"/>
+		</parameter> 
+		
+		<!-- EXECUTION PARAMETERS -->
+		
+		<section key="executionparameters">
+			<label resourceKey="catalog.mdParam.schema.mcp.exeparams"/> 
+			
+			<parameter key="catalog.mdParam.schema.mcp.prefix" meaning="prefix">
+				<label resourceKey="catalog.mdParam.schema.mcp.prefix"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/mcp:prefixString"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.suffix" meaning="suffix">
+				<label resourceKey="catalog.mdParam.schema.mcp.suffix"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/mcp:suffixString"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.separator" meaning="separator">
+				<label resourceKey="catalog.mdParam.schema.mcp.separator"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/mcp:separatorString"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.positionid" meaning="positionid">
+				<label resourceKey="catalog.mdParam.schema.mcp.positionid"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/mcp:positionID"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.functinputid" meaning="functinputid">
+				<label resourceKey="catalog.mdParam.schema.mcp.functinputid"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/mcp:functionalInputID"/>
+			</parameter>
+			
+			<parameter key="catalog.mdParam.schema.mcp.optional" meaning="optional">
+				<label resourceKey="catalog.mdParam.schema.mcp.optional"/>
+				<input type="text"/>
+				<validation required="false"/>
+				<content useSelectForUpdate="true" select="/mcp:packageDescription/mcp:workspace/mcp:executionParameters/mcp:parameter/@mcp:optional"/>
+			</parameter>
+		
+		</section>
+		
+	</section>
+</schema>

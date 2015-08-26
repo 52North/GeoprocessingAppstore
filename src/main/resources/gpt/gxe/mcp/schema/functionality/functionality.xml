@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files describes editor UI for functionality for moving code package descriptions. -->
+<!-- A keyword select box is generated automatically based on browse-catalog.xml  -->
+<!-- @author Jochen Lenz, Bernd Grafe -->
+
+<g:element
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:targetName="mcp:functionality"
+	g:label="Functionality"
+	g:extends="$base/core/xml/Element.xml">
+	<g:body>
+		<g:element
+			xmlns:g="http://www.esri.com/geoportal/gxe"
+			xmlns:h="http://www.esri.com/geoportal/gxe/html"
+			g:targetName="mcp:wps100ProcessDescription"
+			g:label="Process description"
+			g:extends="$base/core/xml/Element.xml">
+			<g:body>
+				<g:attribute
+					g:label="Process version"
+					g:targetName="wps:processVersion"
+					g:extends="$base/core/xml/Attribute.xml" />
+					<!-- type="string" -->
+			</g:body>
+			<g:body>
+				<g:tabs g:extends="$base/core/ui/Tabs.xml">
+					<g:body>
+						<h:div g:label="Common description">
+							<g:element 
+								g:label="Process identifier"
+								g:targetName="ows:Identifier"
+								g:extends="$base/core/xml/ElementTextOnly.xml" />
+							<g:element 
+								g:label="Title"
+								g:targetName="ows:Title"
+								g:extends="$base/core/xml/ElementTextOnly.xml" />
+							<g:element
+								g:label="Abstract"
+								g:targetName="ows:Abstract"
+								g:minOccurs="0"
+								g:extends="$base/core/xml/ElementTextOnly.xml" />
+							<g:element 
+								g:label="Keywords"
+								g:extends="$base/schema/dynamic/keywords.xml" />
+							<g:element
+								g:label="Profile"
+								g:targetName="Profile"
+								g:minOccurs="0"
+								g:maxOccurs="unbounded"
+								g:extends="$base/core/xml/ElementTextOnly.xml" />
+								<!-- type="anyURI" -->
+						</h:div>
+						<h:div g:label="Data inputs">
+							<g:element g:extends="$base/schema/functionality/dataInputs.xml" />
+						</h:div>
+						<h:div g:label="Process outputs">
+							<g:element g:extends="$base/schema/functionality/processOutputs.xml" />
+						</h:div>
+					</g:body>
+				</g:tabs>
+			</g:body>
+		</g:element>
+	</g:body>
+</g:element> 				

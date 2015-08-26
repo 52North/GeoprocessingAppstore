@@ -1,0 +1,239 @@
+body {
+    background-color: #FFF;
+    color: #666666;
+    font-family: sans-serif;
+    /*font-size: normal;*/
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+h2, h3 {
+    font-family: "Myriad Pro", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    text-shadow: 0px 1px 1px silver;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+td {
+    min-width: 140px !important;
+    word-break: normal;
+}
+
+.exhibit-tabularView-columnHeader {
+    text-align: left;
+}
+
+.exhibit-tabularView-body {
+    border: 0px !important;
+}
+
+.exhibit-tabularView-body td, th {
+    border: 0px !important;
+}
+
+.timeline-event-tape, .timeline-small-event-tape, .timeline-small-event-icon {
+    background-color: #CCC;
+}
+
+#exhibit-wrapper {
+    /*padding-top: 230px;*/
+    width: 1150px;
+}
+
+#facets-wrapper {
+    width: 21em;
+    float: left;
+    font-size: 0.9em;
+}
+
+#viewPanel-wrapper {
+    margin-left: 21.5em;
+}
+
+.lens-wrapper {
+    width: 25em;
+}
+
+.lens-wrapper .type {
+    float: right;
+    color: #888;
+}
+
+.lens-wrapper .time {
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.lens-wrapper .field {
+}
+
+div.exhibit-focusDialog {
+    position: absolute;
+    z-index: 1000;
+    background: white !important;
+    border: 1px solid #AAA;
+    padding: 2em;
+    left: 25%;
+    right: 25%;
+}
+
+td.exhibit-lens-property-name {
+    width: 200px;
+}
+
+#page {
+    background-color: #FFFFFF;
+    /*height: 5650px;*/
+    left: 70px;
+    margin: 20px 0 0;
+    padding: 10px 30px;
+    position: absolute;
+    top: 10px;
+    width: 1150px;
+    z-index: -15;
+}
+
+div.header_logo {
+    background-image: url("images/logo_tud.jpg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 65px;
+    padding-top: 5px;
+    position: relative;
+    width: 80%;
+}
+
+div.header_logo_52n {
+    background-image: url("images/52n-logo.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 65px;
+    padding-top: 5px;
+    position: relative;
+    width: 20%;
+    float: right;
+    margin-top: -65px;
+}
+
+.line {
+    background-color: #CDD4E2;
+    border-style: none;
+    border-width: 1px;
+    clear: left;
+    height: 1px;
+    margin: 0.5em 0;
+    overflow: hidden;
+}
+
+div.header_title {
+    background-position: left center;
+    position: absolute;
+    top: 20px;
+}
+
+h2 {
+    /*position: absolute;*/
+    /*display: inline;*/
+    font-size: 1.5em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    padding-top: 0px;
+    margin-left: -20px;
+}
+
+#description {
+    width: 1150px;
+    /*position: absolute;*/
+    /*padding-top: 50px;*/
+}
+
+h1 {
+    color: #636C8E;
+    display: inline;
+    font-size: 2.5em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    position: absolute;
+    text-transform: uppercase;
+    width: 300px;
+}
+
+.line_grey {
+    background-color: silver;
+    border-bottom-color: silver;
+    border-style: none;
+    border-width: 1px;
+    clear: left;
+    height: 1px;
+    margin: 0.5em 0;
+    overflow: hidden;
+}
+
+div.footer {
+    padding-top: 200px; /*Remove once content in table*/
+    font-size: 0.825em;
+    margin-bottom: 30px;
+    position: absolute;
+    text-align: center;
+    width: 1150px;
+    align-content: center;
+}
+
+div.footer a, div.footer a:visited {
+    border-width: 3px;
+    color: #007C95;
+    display: block;
+    /*float: left;*/
+    position: relative;
+    z-index: 100;
+}
+
+#footer_link_glues {
+    clear: left;
+    margin-top: -10px;
+}
+
+p {
+    /*float: left;*/
+    margin-left: 5px;
+    margin-top: 0;
+    position: relative;
+}
+
+td {
+    vertical-align: top;
+}
+
+#wizardButton {
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 0;
+    /* border: 1px #ccc solid; */
+    border: none;
+    font-size: medium;
+    color: #0202ee;
+    color: -webkit-link;
+    /* padding: 0; */
+}
+
+.abstractCategory {
+	font-style: italic !important;
+	color: #666666 !important; 
+}
+
+div.exhibit-flowingFacet-header{
+	padding: 15px 0 0 0 !important;
+}
+
+.hint {
+	padding: 5px 0 0 10px;
+	background-color: #fbf69d;
+}
+
+#imprint {
+    font-size: small;
+    text-align: center;
+}

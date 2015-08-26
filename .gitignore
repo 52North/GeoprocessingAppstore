@@ -1,0 +1,23 @@
+#
+#	Maven
+#
+**/target/
+#
+#	Netbeans
+#
+nbactions*.xml
+**/nbactions*.xml
+nb-configuration*.xml
+**/nb-configuration*.xml
+#
+# 	Eclipse
+#
+.settings
+.project
+.classpath
+*.jpage
+#
+#	Other
+#
+*.log
+/target/

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This files describes editor UI for infrastructures for moving code package descriptions. -->
+<!-- @author Jochen Lenz -->
+
+<g:element 
+	xmlns:g="http://www.esri.com/geoportal/gxe"
+	xmlns:h="http://www.esri.com/geoportal/gxe/html"
+	g:label="Infrastructure"
+	g:targetName="mcp:infrastructure"
+	g:extends="$base/core/xml/Element.xml">
+	<g:element 
+		g:label="Architecture"
+		g:targetName="mcp:occi.compute.architecture"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0" />
+		<!-- type="xs:string" -->
+	<g:element 
+		g:label="Cores"
+		g:targetName="mcp:occi.compute.cores"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0" />
+		<!-- type="xs:integer" -->
+	<g:element 
+		g:label="Memory"
+		g:targetName="mcp:occi.compute.memory"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0" />
+		<!-- type="xs:float" -->
+	<g:element 
+		g:label="Speed"
+		g:targetName="mcp:occi.compute.speed"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0" />
+		<!-- type="xs:float" -->
+	<g:element 
+		g:label="Size"
+		g:targetName="mcp:occi.storage.size"
+		g:extends="$base/core/xml/ElementTextOnly.xml"
+		g:minOccurs="0" />
+		<!-- type="xs:float" -->
+</g:element>
