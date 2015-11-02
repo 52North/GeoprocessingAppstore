@@ -17,6 +17,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<currentYear>2015</currentYear> <!-- manual setting -->
 	</properties>
+	<repositories>
+		<repository>
+			<id>52n-releases</id>
+			<name>52N Releases</name>
+			<url>http://52north.org/maven/repo/releases</url>
+		</repository>
+		<repository>
+			<id>52n-snapshots</id>
+			<name>52N Snapshots</name>
+			<url>http://52north.org/maven/repo/snapshots</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
