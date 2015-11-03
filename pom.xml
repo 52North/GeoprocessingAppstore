@@ -28,6 +28,17 @@
 			<name>52N Snapshots</name>
 			<url>http://52north.org/maven/repo/snapshots</url>
 		</repository>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<id>github.com-gp-appstore-maven-repo</id>
+			<name>github.com-gp-appstore-maven-repo</name>
+			<url>https://raw.githubusercontent.com/52North/GeoprocessingAppstore/master/maven-repo</url>
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
