@@ -37,7 +37,7 @@
 			</releases>
 			<id>github.com-gp-appstore-maven-repo</id>
 			<name>github.com-gp-appstore-maven-repo</name>
-			<url>https://raw.githubusercontent.com/52North/GeoprocessingAppstore/master/maven-repo</url>
+			<url>https://raw.githubusercontent.com/52north/GeoprocessingAppstore/master/maven-repo</url>
 		</repository>
 	</repositories>
 	<dependencies>
